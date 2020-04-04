@@ -1,0 +1,245 @@
+    *{
+    margin: 0px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+body::-webkit-scrollbar {
+	width: 20px;
+	background: #152049;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: rgba(255,255,255, .2);
+	border-radius: 10px;
+	border-right: 6px solid #152049;
+}
+.padre{
+  display: flex;
+  flex-flow: column nowrap;
+  font-family: 'Spectral', serif; 
+  /*background: url(https://lh3.googleusercontent.com/proxy/2P8R5PuREY79It_7MDep_BZQj32qdpsXGj_rzb6eEYvJEL6_xSWGaEpjvGGvM2-4ZipM5dUT9KiZVcmeBAf11OK4l5cBsbA7RRrRN1cwa5pwKw);*/
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}   
+  /*fondo de pantalla
+background-image: url(https://i.pinimg.com/originals/7c/f9/28/7cf92868b50c428c103210ae3391be02.jpg);
+background-repeat: no-repeat;
+background-position: center center;
+background-size: cover;
+background-attachment: fixed;
+background-position: center;
+background-attachment:contain;
+background-size: cover;*/
+a{
+  text-decoration: none;
+}
+  .header{
+    background:rgba(10, 10, 26, 0.616);
+    display: flex;
+    flex-flow: column nowrap;
+  }
+    .encabezado{
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      width: auto;
+      height: 177px;
+      background: #061D29; /*background:rgba (0,0,0,.1) - transparencia de color negro*/
+      border-bottom: 2px solid rgba(235, 178, 24, 0.719);
+    }
+      .logoLol{
+        flex: 1 1 auto;
+      }
+        .logo{
+          position: absolute;
+          width: 326px;
+          height: 146px;
+          left: 46px;
+          top: 40px;
+          background:  rgba(0, 0, 0, .0.1);
+          display: flex;
+          align-items: flex-end;
+        }
+      .buscar{
+        background: #061D29;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+      }
+        .formBuscador{
+          background: #C4C4C4;
+          width: 350px;
+          height: 60px;
+        } /*para enlazar iconos <i class:"" aria-hidden="true></i>"*/
+        .botonBuscar{
+          width: auto;
+        }
+    .menu{
+      background:#31302E;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+    }
+      .opciones{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        width: 687px;
+        height: 85px;
+      }
+        .opciones a{
+          color: rgba(196, 177, 14, 0.904);
+          font-size: 23px;
+          text-transform: uppercase;
+          padding: 0 10px;
+          letter-spacing: 2px;
+          flex-flow: row wrap;
+          align-items: flex-start;
+          text-shadow: 1px 1px 2px black;
+        }
+        .opciones a:hover{
+          color:#EFEABB;
+        
+        }
+          .itemO{
+            flex: 3 1 auto;
+          }
+          .itemR{
+            flex: 3 1 auto;
+          }
+          .itemH{
+            flex: 3 1 auto;
+          }
+  .main{
+    background:rgba(10, 10, 26, 0.911);
+  }
+
+    .lista{
+      display: flex;
+      flex-flow: row nowrap;
+      background:rgba(6, 6, 19, 0.616);
+    }
+      .galeriaDeCampeones{
+        display: flex;
+        flex-flow: row nowrap;
+        flex: 1 1 auto;
+        flex-wrap: wrap;
+      }
+        .casillaCampeon{
+          display: flex;
+          flex-flow: column nowrap;
+          flex: 3 1 auto;
+          box-shadow: 4px 4px 11px rgba(252, 249, 249, 0.27);
+          width: 295px;
+          height: 370px;
+          box-sizing: border-box;
+          box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);  
+        }
+        .imagenCampeon{
+          width: 290px;
+          height: 300px;
+        }
+        .nombreCampeon{
+          text-align: center;
+          font-size: 36px;
+          line-height: 40px;
+          color: #FFFFFF;}
+  .footer{
+    background: rgb(28, 28, 29);
+    display: flex;
+    justify-content: center;
+  }
+  /*responsive para tablet no se si sea necesario,probando*/
+  /*@media all and (max-width: 800px){
+    .menu{
+      flex-direction: column;
+      height: auto;
+    }
+  }
+  @media all and (max-width: 400px){
+    .galeriaDeCampeones{
+      flex-direction: column nowrap;
+      height: auto;
+    }
+    .casillaCampeon{
+      width:10px;
+
+    } */
+
+  #error {
+    background: #707b15;
+    padding: 10px 10px 10px 10px;
+}
+.ocultar{
+  display: none;
+}
+
+.contenedorSubir{
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  z-index: -1;
+}
+.botonSubir{
+  width: 0px;
+  height: 0px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .2s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.botonSubir img{
+  position: absolute;
+  font-size: 17px;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  color: white;
+  transition: .2s;
+}
+.show{
+  z-index: 10;
+}
+.show .botonSubir{
+  animation: popup .3s ease-in-out;
+  width: 66px;
+  height: 66px;
+  z-index: 11;
+}
+.show img{
+  transform: translate(-50%, -50%) scale(1);
+}
+@keyframes popup{
+  0%{
+    width: 0px;
+    height: 0px;
+  }
+  50%{
+    width: 80px;
+    height: 80px;
+  }
+  100%{
+    width: 66px;
+    height: 66px;
+  }
+}
+.cantidadMostrada {
+  margin: 5px;
+  padding: 5px;
+}
+.Assassin,.Fighter,.Mage,.Marksman,.Support,.Tank {
+  border-radius: 50%;
+  border: 2px solid black;
+  height:100px;
+  width:100px;
+
+}
+
