@@ -3,86 +3,72 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Data Lovers</title>
+    <title>LOL CHAMPIONS</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Spectral:400,800&display=swap" rel="stylesheet">
+    <link rel="icon"  href="imagenes\icon_lol.png">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Spectral:400,800&display=swap" rel="stylesheet"> -->
   </head>
-
   <body class="padre">
+
     <header class="header">
       <div class="encabezado">
         <div class="logoLol">
-          <a href="index.htlm"><img src= "imagenes/logo.png" class="logo" ></a><!--src= "imagenes/logo.png"/volver a ponerlo cuando termine el css-->
+          <a href="\src\index.html"><img src= "imagenes/logo.png" class="logo" ></a><!--src= "imagenes/logo.png"/volver a ponerlo cuando termine el css-->
         </div>
+        <button class ="iconBuscar" id="iconBuscar"><img src="imagenes/search-regular-24.png" alt="buscar"></button>
+        <input type="search" id="buscador" class="formBuscador" placeholder="Buscar por campeon">
       </div>
-     
-      <div>
-        <form class="formBuscador">
-          <button id="botonTodos" class="botonTodos">TODOS</button>
-          <input type="search" id="buscador" placeholder="Buscar por campeon">
-
-        </form>
-        <!--<input type="checkbox" id="btn-menu">
-        <label for="btn-menu">
-          <img src="imagenes/menu-regular-24.png" alt="">
-        </label>-->
-      </div>
-      <div class="menu">
-        <nav >
+      <nav class="menu">
+        <a href="\src\index.html"><button id="todos" class="btnTodos estiloBoton">ALL</button></a>
           <select name="opciones" id="ordenar" class="selectStyle">
-            <option value="" selected disabled>Ordenar</option>
-            <option value="ascendente">A - Z</option>
-            <option value="descendente">Z - A</option>
+            <option value="" selected disabled  class="estiloBoton">ORDER</option>
+            <option value="ascendente" class="estiloBoton">A - Z</option>
+            <option value="descendente" class="estiloBoton">Z - A</option>
           </select>
-          <select name="opciones" id="roles" class="selectStyle">
-            <option value="" selected disabled>Roles</option>
-          </select>
-          <select name="opciones" id="habilidades" class="selectStyle">
-            <option value="" selected disabled>Habilidades</option>
-          </select>
-        </nav>
-      </div>
-      
+          <button id="buttonRoles" class="estiloBoton">ROLE</button>
+          <button id="habilidades" class="estiloBoton">AVERAGE</button>
+      </nav>  
     </header>
  
     <main>
-      <section class="lista">
-      <div id="galeria" class="galeriaDeCampeones">  
+
+      <!--primera pantalla (buscar, ordenar)-->
+      <div id= "pantalla1">
+      <div id="cantidad" class="cantidadMostrada"></div>
+        <section class="lista">
+         <div id="galeria" class="galeriaDeCampeones"></div>
+         <div id="error" class="ocultar">No se encontraron resultados</div>
+        </section> 
       </div>
-      <div id="error">No se encontraron resultados</div>
-      </section> 
-      <section class="roles" id="rolesCampeones">
-        <div>
-          <button id="luchador" class="luchador"></button>
-          <h2>LUCHADOR</h2>
+
+      <div class="contenedorSubir" >
+        <div class="botonSubir">
+          <img src="imagenes/flecha-arriba.png" alt="subir">
         </div>
-        <div>
-          <button id="tirador" class="tirador"></button>
-          <h2>TIRADOR</h2>
-        </div>
-        <div>
-          <button id="hechicero" class="hechicero"></button>
-          <h2>HECHICERO</h2>
-        </div>
-        <div>
-          <button id="asesino" class="asesino"></button>
-          <h2>ASESINO</h2>
-        </div>
-        <div>
-          <button id="tanque" class="tanque"></button>
-          <h2>TANQUE</h2>
-        </div>
-        <div>
-          <button id="apoyo" class="apoyo"></button>
-          <h2>APOYO</h2>
-        </div>
-        <div id="filtroRoles" class="filtroRoles">  
-        </div>
-      </section>
+      </div>
+
+      <!--segunda pantalla (ver los roles)-->
+      <div id="pantalla2" class="ocultar">
+        <section id="sectionRoles" class="roles">
+          <div class="divRol"><input type="image" id="Assassin" value ="Assassin" class="styleInput" src="imagenes\role-icon-assassin.png"><p class="pRoles">ASSASSIN</p></div>
+          <div class="divRol"><input type="image" id="Fighter" value ="Fighter" class="styleInput" src="imagenes\league-of-legends-fighter-icon-1.png"><p class="pRoles">FIGHTER</p></div>
+          <div class="divRol"><input type="image" id="Mage" value ="Mage" class="styleInput" src="imagenes\Mage_icon.png"><p class="pRoles">MAGE</p></div>
+          <div class="divRol"><input type="image" id="Marksman" value ="Marksman" class="styleInput" src="imagenes\role_icon_fighter.png"> <p class="pRoles"> MARKSMAN </p> </div> 
+          <div class="divRol"><input type="image" id="Support" value ="Support" class="styleInput" src="imagenes\role_icon_support.png"><p class="pRoles">SUPPORT</p></div>
+          <div class="divRol"><input type="image" id="Tank" value ="Tank" class="styleInput" src="imagenes\Tanque.png"><p class="pRoles">TANK</p></div>
+        </section>
+      </div>
+      <!--tercera pantalla (lista de campeones por rol)-->
+      <div id="pantalla3">
+        <section>
+          <div id="detalleCampeon" class="detalleCampeon"></div>
+        </section>
+      </div>
     </main>
+
     <footer class="footer">
       <p> Teleticket &copy;2020 - Todos los derechos reservados</p>
-    <footer>  
+    </footer>  
     <script src="main.js" type="module"></script>
   </body>
 </html>
